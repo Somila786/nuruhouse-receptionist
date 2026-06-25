@@ -1,0 +1,167 @@
+[
+  {
+    "id": "text-greeting",
+    "formData": {
+      "text$en": "👋 Welcome to Nuru House! I'm your virtual assistant. We offer premium wigs, hair bundles, and professional salon services in Pretoria North.\n\nHow can I help you today? You can ask me about:\n• 💇 Our wigs & hair products\n• 📅 Booking a salon service\n• 🛍️ Ordering & delivery\n• 📦 Preorders\n• 💡 Hair care tips",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-leadmenu",
+    "formData": {
+      "text$en": "What are you looking for today?\n• Products (wigs, bundles)\n• Booking (salon services)\n• Preorder (reserve a style)\n• Order & Delivery\n• Hair Care Tips",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-product",
+    "formData": {
+      "text$en": "💁‍♀️ *Nuru House Hair Collection*\n\nWe stock premium wigs from R1,100, bundles from R6,500, and closures & frontals.\n\nFor the exact style and price you're after, our team will assist you.\n📞 072 620 3038 | 🌐 nuruhouse.vercel.app\n\nWhat style are you looking for? Tell me and I'll get our team to follow up.",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-preorder",
+    "formData": {
+      "text$en": "📦 *Nuru House Preorders*\n\nWe offer preorders on wigs, bundles, and hair — so you can reserve your style before it arrives.\n\nOur team will confirm availability, estimated arrival, and payment details.\n\nLet me take your details so we can get back to you.",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-booking",
+    "formData": {
+      "text$en": "📅 *Book a Salon Service*\n• Lace Front Install — from R1,500\n• Knotless Braids — from R850\n• Sew-In Weave — available\n• Wash & Style — from R350\n• Haircut — from R60\n• Acrylic Nails — from R380\n\n📍 247 Burger Street, Pretoria North\n⏰ Mon–Sat 09:00–19:00 | Sun 09:00–17:30\n\nLet me get your booking details 📝",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-order",
+    "formData": {
+      "text$en": "🛍️ *Ordering & Delivery*\n• Free courier in Pretoria for orders over R2,500\n• Nationwide delivery: 2–4 business days\n• In-store pickup: 247 Burger Street, Pretoria North\n\nLet me take your details and our team will confirm stock and payment.",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-caretips",
+    "formData": {
+      "text$en": "💡 *Nuru House Hair Care Tips*\n\n*For wigs:*\n• Store on a wig stand when not in use\n• Wash with cold water and wig-safe shampoo\n• Detangle gently from ends to roots\n• Use heat protectant before styling\n\n*For weaves & sew-ins:*\n• Keep your scalp moisturised\n• Sleep with a satin bonnet or pillowcase\n• Avoid product buildup at the roots\n\nNeed more advice? Our stylists are here:\n📞 072 620 3038 | ⏰ Mon–Sat 09:00–19:00",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-capture1",
+    "formData": {
+      "text$en": "What's your name?",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-capture2",
+    "formData": {
+      "text$en": "Lovely! What product, service or style are you interested in?",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-capture3",
+    "formData": {
+      "text$en": "Great! What's your preferred day and time, or delivery option?",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-dropoff",
+    "formData": {
+      "text$en": "No problem! Reach us directly on 072 620 3038 — our team is ready to help. 😊",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-confirmation",
+    "formData": {
+      "text$en": "✅ Got it! Our team has been notified and will reach out to you shortly on 072 620 3038.\n\nThank you for choosing Nuru House! 💁‍♀️✨",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-escalate",
+    "formData": {
+      "text$en": "Let me connect you with our team directly.\n📞 *072 620 3038*\n⏰ Mon–Sat 09:00–19:00 | Sun 09:00–17:30\n📍 247 Burger Street, Pretoria North",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-nontext",
+    "formData": {
+      "text$en": "I can only read text messages here. Type your question and I'll help — or reach us directly on 072 620 3038. 😊",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  },
+  {
+    "id": "text-returngreeting",
+    "formData": {
+      "text$en": "Welcome back! How can I help? Products, booking, or something else?",
+      "typing$en": true
+    },
+    "createdBy": "catalyst7",
+    "createdOn": "2026-06-25T00:00:00.000Z",
+    "modifiedOn": "2026-06-25T00:00:00.000Z",
+    "contentType": "builtin_text"
+  }
+]

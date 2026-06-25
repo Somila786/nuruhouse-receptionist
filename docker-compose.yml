@@ -1,0 +1,43 @@
+# Target path on VPS: /opt/botpress/docker-compose.yml
+# Nuru House WhatsApp AI Receptionist — Botpress v12 (self-hosted, Hetzner VPS)
+#
+# IMPORTANT: This is a staged template. Before replacing the live file, diff it
+# against the existing /opt/botpress/docker-compose.yml so you do not drop any
+# settings already in place (volume name, image tag, reverse-proxy labels, etc.).
+# The three env vars below are the ones the brief requires on the botpress service.
+
+version: "3.8"
+
+services:
+  botpress:
+    image: botpress/server:v12_30_10
+    container_name: botpress
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # --- Core Botpress ---
+      - PORT=3000
+      - EXTERNAL_URL=https://agent.catalyst7.co.za
+      - BP_PRODUCTION=true
+
+      # --- Nuru House integration secrets (brief: ENVIRONMENT VARIABLES) ---
+      # Anthropic key used by actions/classifyIntent.js (Claude Haiku).
+      # Keep the real value in a .env file next to this compose file, NOT committed.
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+
+      # Make.com webhook used by actions/logLead.js -> Google Sheets + WhatsApp notify.
+      - MAKE_WEBHOOK_URL=https://hook.eu2.make.com/m1sw6oe65lj7wp75b99a6t2s9jjucff9
+
+      # WhatsApp Cloud API token — placeholder until Meta business verification (Gap 5).
+      # Replace with the live token once the new SIM is approved, then: docker restart botpress
+      - BP_WHATSAPP_ACCESS_TOKEN=REPLACE_WHEN_META_APPROVES
+
+      # Phone Number ID — pending Meta registration of the new SIM (brief: PENDING #3).
+      - BP_WHATSAPP_PHONE_NUMBER_ID=REPLACE_WHEN_META_APPROVES
+    volumes:
+      - botpress_botpress_data:/botpress/data
+
+volumes:
+  botpress_botpress_data:
+    external: true

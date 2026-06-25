@@ -1,0 +1,176 @@
+{
+  "version": "0.0.1",
+  "name": "main.flow.json",
+  "startNode": "start",
+  "timeoutNode": "dropOff",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "nodes": [
+    {
+      "id": "start",
+      "name": "start",
+      "onEnter": [],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "session.lastActive && (Date.now() - session.lastActive) < 1800000",
+          "node": "returnGreeting"
+        },
+        {
+          "condition": "true",
+          "node": "greet"
+        }
+      ]
+    },
+    {
+      "id": "greet",
+      "name": "greet",
+      "onEnter": ["say #!text-greeting"],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "classify" }]
+    },
+    {
+      "id": "returnGreeting",
+      "name": "returnGreeting",
+      "onEnter": ["say #!text-returngreeting"],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "classify" }]
+    },
+    {
+      "id": "classify",
+      "name": "classify",
+      "onEnter": ["nuruhouse/classifyIntent {\"text\":\"{{event.preview}}\"}"],
+      "onReceive": null,
+      "next": [
+        { "condition": "temp.nonText === true", "node": "nonText" },
+        { "condition": "temp.intent === 'ESCALATE'", "node": "escalate" },
+        { "condition": "temp.intent === 'CARE_TIPS'", "node": "careTips" },
+        { "condition": "temp.intent === 'PRODUCT_ENQUIRY'", "node": "respondProduct" },
+        { "condition": "temp.intent === 'PREORDER'", "node": "respondPreorder" },
+        { "condition": "temp.intent === 'BOOKING'", "node": "respondBooking" },
+        { "condition": "temp.intent === 'ORDER'", "node": "respondOrder" },
+        { "condition": "temp.intent === 'LEAD'", "node": "leadMenu" },
+        { "condition": "true", "node": "leadMenu" }
+      ]
+    },
+    {
+      "id": "leadMenu",
+      "name": "leadMenu",
+      "onEnter": ["say #!text-leadmenu"],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "classifyMenu" }]
+    },
+    {
+      "id": "classifyMenu",
+      "name": "classifyMenu",
+      "onEnter": ["nuruhouse/classifyIntent {\"text\":\"{{event.preview}}\"}"],
+      "onReceive": null,
+      "next": [
+        { "condition": "temp.nonText === true", "node": "nonText" },
+        { "condition": "temp.intent === 'ESCALATE'", "node": "escalate" },
+        { "condition": "temp.intent === 'CARE_TIPS'", "node": "careTips" },
+        { "condition": "temp.intent === 'PRODUCT_ENQUIRY'", "node": "respondProduct" },
+        { "condition": "temp.intent === 'PREORDER'", "node": "respondPreorder" },
+        { "condition": "temp.intent === 'BOOKING'", "node": "respondBooking" },
+        { "condition": "temp.intent === 'ORDER'", "node": "respondOrder" },
+        { "condition": "true", "node": "captureName" }
+      ]
+    },
+    {
+      "id": "respondProduct",
+      "name": "respondProduct",
+      "onEnter": ["say #!text-product"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "captureName" }]
+    },
+    {
+      "id": "respondPreorder",
+      "name": "respondPreorder",
+      "onEnter": ["say #!text-preorder"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "captureName" }]
+    },
+    {
+      "id": "respondBooking",
+      "name": "respondBooking",
+      "onEnter": ["say #!text-booking"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "captureName" }]
+    },
+    {
+      "id": "respondOrder",
+      "name": "respondOrder",
+      "onEnter": ["say #!text-order"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "captureName" }]
+    },
+    {
+      "id": "captureName",
+      "name": "captureName",
+      "onEnter": ["say #!text-capture1"],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "captureInterest" }]
+    },
+    {
+      "id": "captureInterest",
+      "name": "captureInterest",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"leadName\",\"value\":\"{{event.preview}}\"}",
+        "say #!text-capture2"
+      ],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "capturePreference" }]
+    },
+    {
+      "id": "capturePreference",
+      "name": "capturePreference",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"leadInterest\",\"value\":\"{{event.preview}}\"}",
+        "say #!text-capture3"
+      ],
+      "onReceive": [],
+      "next": [{ "condition": "true", "node": "logLead" }]
+    },
+    {
+      "id": "logLead",
+      "name": "logLead",
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"leadPreference\",\"value\":\"{{event.preview}}\"}",
+        "nuruhouse/logLead {\"name\":\"{{session.leadName}}\",\"interest\":\"{{session.leadInterest}}\",\"preference\":\"{{session.leadPreference}}\"}",
+        "say #!text-confirmation"
+      ],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "END" }]
+    },
+    {
+      "id": "careTips",
+      "name": "careTips",
+      "onEnter": ["say #!text-caretips"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "END" }]
+    },
+    {
+      "id": "escalate",
+      "name": "escalate",
+      "onEnter": ["say #!text-escalate"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "END" }]
+    },
+    {
+      "id": "nonText",
+      "name": "nonText",
+      "onEnter": ["say #!text-nontext"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "END" }]
+    },
+    {
+      "id": "dropOff",
+      "name": "dropOff",
+      "onEnter": ["say #!text-dropoff"],
+      "onReceive": null,
+      "next": [{ "condition": "true", "node": "END" }]
+    }
+  ]
+}
